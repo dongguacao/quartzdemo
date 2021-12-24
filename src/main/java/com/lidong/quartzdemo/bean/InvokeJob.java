@@ -19,6 +19,6 @@ public class InvokeJob implements Job {
         String url = (String)dataMap.get("url");
 
         //todo 调用url
-        System.out.println("invoke : " +url);
+//        System.out.println("invoke : " +url);
     }
 }
