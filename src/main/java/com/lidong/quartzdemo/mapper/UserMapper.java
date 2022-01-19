@@ -1,5 +1,6 @@
 package com.lidong.quartzdemo.mapper;
 
+import com.lidong.quartzdemo.bo.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -8,5 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper {
-    String selectid();
+    User selectid();
 }

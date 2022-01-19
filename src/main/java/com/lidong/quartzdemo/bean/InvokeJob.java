@@ -1,5 +1,6 @@
 package com.lidong.quartzdemo.bean;
 
+import org.apache.ibatis.type.Alias;
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
@@ -9,6 +10,7 @@ import org.quartz.JobExecutionException;
  * @author caolidong
  * @date 2020/8/5
  */
+@Alias("job")
 public class InvokeJob implements Job {
 
 
