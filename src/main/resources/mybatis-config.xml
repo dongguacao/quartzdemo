@@ -26,6 +26,10 @@
         <typeHandler handler="com.lidong.quartzdemo.handler.MyTypeHandler"></typeHandler>
         <package name="com.lidong.quartzdemo.handler"></package>
     </typeHandlers>
+
+    <objectFactory type=""></objectFactory>
+
+
     <environments default="mysql">
         <environment id="mysql">
             <!--指定事务管理的类型，这里简单使用Java的JDBC的提交和回滚设置-->
@@ -39,6 +43,5 @@
             </dataSource>
         </environment>
     </environments>
-
 
 </configuration>

@@ -1,7 +1,10 @@
 package com.lidong.quartzdemo.mapper;
 
+import com.lidong.quartzdemo.bo.Order;
 import com.lidong.quartzdemo.bo.User;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @author caolidong
@@ -9,5 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper {
-    User selectid();
+    String selectid();
+    List<Order> typehandler();
 }

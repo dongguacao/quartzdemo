@@ -33,12 +33,13 @@ public class MyPooledObjectFactory extends BasePooledObjectFactory<Connection>{
         return new DefaultPooledObject<>(connection);
     }
 
-    @Override
-    public void destroyObject(PooledObject<Connection> p, DestroyMode destroyMode) throws Exception {
-
-    }
     public void setFactory(MyConnectionPool myConnectionPool){
         this.myConnectionPool = myConnectionPool;
+    }
+
+    @Override
+    public void destroyObject(PooledObject<Connection> p) throws Exception {
+        super.destroyObject(p);
     }
 
     @Override
