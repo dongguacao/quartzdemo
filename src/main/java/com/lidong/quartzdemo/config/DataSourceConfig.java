@@ -17,7 +17,7 @@ public class DataSourceConfig {
 
     @Bean(name = "myDataSource")
     @Qualifier("myDataSource")
-    @Primary
+//    @Primary
     public DataSource getDataSource(){
         return new MyDataSource();
     }

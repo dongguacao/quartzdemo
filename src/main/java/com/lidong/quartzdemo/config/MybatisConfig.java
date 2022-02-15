@@ -26,7 +26,7 @@ public class MybatisConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().
                 getResources("classpath*:/mapper/*.xml"));
-//        sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+        sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
 //        sqlSessionFactoryBean.setConfiguration();  可以复写configuration.xml文件
         return sqlSessionFactoryBean.getObject();
     }

@@ -12,6 +12,9 @@ import java.util.List;
  */
 @Mapper
 public interface UserMapper {
-    String selectid();
+    User selectid();
     List<Order> typehandler();
+    default String test(){
+        return "1";
+    }
 }

@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lidong.quartzdemo.mapper.UserMapper" >
-    <!--<resultMap id="us" type="user">-->
-        <!--<result column="id" property="name" ></result>-->
-        <!--<collection column="{uid=id}" property="orders" ofType="order" select="getOrders" >-->
-        <!--</collection>-->
-    <!--</resultMap>-->
-    <!--<resultMap id="or" type="order">-->
-        <!--<result column="id" property="id"></result>-->
-        <!--<result column="name" property="name"></result>-->
-    <!--</resultMap>-->
+    <resultMap id="us" type="user">
+        <result column="id" property="name" ></result>
+        <collection column="{uid=name}" property="orders" ofType="order" select="getOrders"   >
+        </collection>
+    </resultMap>
+    <resultMap id="or" type="order">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+    </resultMap>
     <!--<resultMap id="or1" type="order">-->
         <!--<result column="name" property="name" typeHandler="com.lidong.quartzdemo.handler.MyTypeHandler"></result>-->
     <!--</resultMap>-->
-
-    <select id="selectid" resultType="string">
+    <!--<cache-ref namespace="a" />-->
+    <cache type="com.lidong.quartzdemo.cache.MyCache"></cache>
+    <select id="selectid" resultMap="us" flushCache="true">
         select
         id as name
         from user
     </select>
-    <!--<select id="getOrders" resultMap="or">-->
-        <!--select id,name from orders where uid=#{uid}-->
-    <!--</select>-->
+    <select id="getOrders" resultMap="or">
+        select id,name from orders where uid=#{uid}
+    </select>
 
     <!--<select id="typehandler" resultMap="or1">-->
         <!--select name from orders-->

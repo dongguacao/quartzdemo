@@ -21,8 +21,8 @@ public class UserController {
     private UserMapper usermapper;
     @ResponseBody
     @RequestMapping("get")
-    public String test(){
-        String selectid = usermapper.selectid();
+    public User test(){
+        User selectid = usermapper.selectid();
 //        List<Order> typehandler = usermapper.typehandler();
         return selectid;
     }
